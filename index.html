@@ -1,5 +1,19 @@
-<!DOCTYPE html>
 <html>
+   <nav id="slide-menu">
+         <link rel="stylesheet" type="text/sss" href="css/menu.css">
+      <ul>
+         <li class="timeline">Timeline</li>
+         <li class="events">Events</li>
+         <li class="calendar">Calendar</li>
+         <li class="sep settings">Settings</li>
+         <li class="logout">Logout</li>
+         <script src="/Javascript/script.js"></script>
+      </ul>
+   </nav>
+   <!-- Content panel -->
+   <div id="content">
+      <div class="menu-trigger"></div>
+   </div>
       <head>
          <title> MSI - Niels Gerritsen </title>
          <meta name="description" content="Niels Gerritsen Project">
@@ -53,19 +67,26 @@
         <BR>
          <BR>
          <P> Voor vragen kan je via onderstaande contact opnemen:
-            <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
+            <div class="container-contact">
+                  <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/{form_id}" method="post">
                <fieldset id="fs-frm-inputs">
                  <label for="full-name">Full Name</label>
+                 <br>
                  <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+                 <br>
                  <label for="email-address">Email Address</label>
+                 <br>
                  <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+                 <BR>
                  <label for="message">Message</label>
+                 <BR>
                  <textarea rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
                  <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
                </fieldset>
                <input type="submit" value="Submit">
              </form>
          </P>
+      </div>
    </body>
 
 </html>
