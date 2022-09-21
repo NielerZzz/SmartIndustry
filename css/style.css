@@ -13,7 +13,7 @@ body{
 .container-contact{
 	background-color:white;
 	color: darkolivegreen;
-	width:80%;
+	width:98%;
 	margin:auto;
 	overflow:hidden;
 	box-sizing: border-box;
@@ -85,7 +85,8 @@ body{
 }
 
 .float-container {
-	color: lightgray;
+	background: lightgray;
+	color: black;
     border: 3px solid black;
     padding: 20px;
 	width:95%;

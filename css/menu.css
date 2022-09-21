@@ -17,12 +17,9 @@ html *::after {
 body{
     
     margin: 0;
-    display: flex;
     height: 100vh;
-    overflow: hidden;
     align-items: center;
     justify-content: center;
-    background-color: #ffb457;
     -webkit-tap-highlight-color: transparent;
     transition: background-color var(--duration);
 
@@ -30,17 +27,19 @@ body{
 
 .menu{
 
-    margin: 0;
     display: flex;
     /* Works well with 100% width  */
-    width: 32.05em;
+     width: 32.05em;
     font-size: 1.5em;
     padding: 0 2.85em;
-    position: relative;
+    position: fixed;
     align-items: center;
     justify-content: center;
     background-color: var(--bgColorMenu);
-    
+   bottom: 0;
+    width: 100%;
+    color: white;
+        
 }
 
 .menu__item{
