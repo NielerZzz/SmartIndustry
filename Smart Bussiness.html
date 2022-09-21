@@ -7,63 +7,64 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<header id="main-header">
-		<h1>Smart Bussiness </h1>
-	</header>
+	<script src="Menu.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/Menu.css">
+	<menu class="menu">
 
-	<a href="index.html">Go to homepage</a>
-
-	<section>
-		<article class="post">
-			<h3>Blog Post One</h3>
-			<small>Posted by Brad on July 17</small>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<a href="post.html">Read More</a>
-		</article>
-
-		<article class="post">
-			<h3>Blog Post Two</h3>
-			<small>Posted by Brad on July 17</small>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<a href="post.html">Read More</a>
-		</article>
-
-		<article class="post">
-			<h3>Blog Post Three</h3>
-			<small>Posted by Brad on July 17</small>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<a href="post.html">Read More</a>
-		</article>
-	</section>
-
-	<aside>
-		<h3>Categories</h3>
-		<nav>
-			<ul>
-				<li><a href="#">Category 1</a></li>
-				<li><a href="#">Category 2</a></li>
-				<li><a href="#">Category 3</a></li>
-			</ul>
-		</nav>
-	</aside>
-
-	<footer id="main-footer">
-		<p>Copyright &copy; 2017, My Website</p>
-	</footer>
+	 <button class="menu__item active" style="--bgColorItem: #ff8c00;" >
+	   <svg class="icon" viewBox="0 0 24 24">
+		 <path d="M3.8,6.6h16.4"/>
+		 <path d="M20.2,12.1H3.8"/>
+		 <path d="M3.8,17.5h16.4"/>
+	   </svg>
+	 </button>
+ 
+	 <button class="menu__item" style="--bgColorItem: #f54888;">
+	   <svg class="icon" viewBox="0 0 24 24">
+		 <path  d="M6.7,4.8h10.7c0.3,0,0.6,0.2,0.7,0.5l2.8,7.3c0,0.1,0,0.2,0,0.3v5.6c0,0.4-0.4,0.8-0.8,0.8H3.8
+		 C3.4,19.3,3,19,3,18.5v-5.6c0-0.1,0-0.2,0.1-0.3L6,5.3C6.1,5,6.4,4.8,6.7,4.8z"/>
+		 <path  d="M3.4,12.9H8l1.6,2.8h4.9l1.5-2.8h4.6"/>
+	   </svg>
+	 </button>
+ 
+	 <button class="menu__item" style="--bgColorItem: #4343f5;" >
+	   <svg class="icon" viewBox="0 0 24 24">
+	   <path  d="M3.4,11.9l8.8,4.4l8.4-4.4"/>
+	   <path  d="M3.4,16.2l8.8,4.5l8.4-4.5"/>
+	   <path  d="M3.7,7.8l8.6-4.5l8,4.5l-8,4.3L3.7,7.8z"/>
+	   </svg>
+	   </button>
+ 
+	 <button class="menu__item" style="--bgColorItem: #e0b115;" > 
+	   <svg class="icon" viewBox="0 0 24 24" >
+		 <path  d="M5.1,3.9h13.9c0.6,0,1.2,0.5,1.2,1.2v13.9c0,0.6-0.5,1.2-1.2,1.2H5.1c-0.6,0-1.2-0.5-1.2-1.2V5.1
+		   C3.9,4.4,4.4,3.9,5.1,3.9z"/>
+		 <path  d="M4.2,9.3h15.6"/>
+		 <path  d="M9.1,9.5v10.3"/>
+		</svg>
+	 </button>
+ 
+	 <button class="menu__item" style="--bgColorItem:#65ddb7;">
+	   <svg class="icon" viewBox="0 0 24 24" >
+		 <path  d="M5.1,3.9h13.9c0.6,0,1.2,0.5,1.2,1.2v13.9c0,0.6-0.5,1.2-1.2,1.2H5.1c-0.6,0-1.2-0.5-1.2-1.2V5.1
+		   C3.9,4.4,4.4,3.9,5.1,3.9z"/>
+		 <path  d="M5.5,20l9.9-9.9l4.7,4.7"/>
+		 <path  d="M10.4,8.8c0,0.9-0.7,1.6-1.6,1.6c-0.9,0-1.6-0.7-1.6-1.6C7.3,8,8,7.3,8.9,7.3C9.7,7.3,10.4,8,10.4,8.8z"/>
+	   </svg>
+	 </button>
+ 
+	 <div class="menu__border"></div>
+ 
+   </menu>
+ 
+   <div class="svg-container">
+	 <svg viewBox="0 0 202.9 45.5" >
+	   <clipPath id="menu" clipPathUnits="objectBoundingBox" transform="scale(0.0049285362247413 0.021978021978022)">
+		 <path  d="M6.7,45.5c5.7,0.1,14.1-0.4,23.3-4c5.7-2.3,9.9-5,18.1-10.5c10.7-7.1,11.8-9.2,20.6-14.3c5-2.9,9.2-5.2,15.2-7
+		   c7.1-2.1,13.3-2.3,17.6-2.1c4.2-0.2,10.5,0.1,17.6,2.1c6.1,1.8,10.2,4.1,15.2,7c8.8,5,9.9,7.1,20.6,14.3c8.3,5.5,12.4,8.2,18.1,10.5
+		   c9.2,3.6,17.6,4.2,23.3,4H6.7z"/>
+	   </clipPath>
+	 </svg>
+   </div>
 </body>
 </html>
