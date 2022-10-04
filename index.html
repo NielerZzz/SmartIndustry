@@ -11,7 +11,7 @@
    <body>
          <header>
          <menu class="menu">
-            <button class="menu__item active" style="--bgColorItem:#65ddb7;">
+            <button class="menu__item active" style="--bgColorItem: #ff8c00;" >
                <svg class="icon" viewBox="0 0 24 24" > <a href="index.html" target="_self">
                  <path  d="M5.1,3.9h13.9c0.6,0,1.2,0.5,1.2,1.2v13.9c0,0.6-0.5,1.2-1.2,1.2H5.1c-0.6,0-1.2-0.5-1.2-1.2V5.1
                   C3.9,4.4,4.4,3.9,5.1,3.9z"/>
@@ -23,7 +23,7 @@
                <br>Homepage
       
               <div class="menu__border"></div>
-            <button class="menu__item" style="--bgColorItem: #ff8c00;" > <a href="Smart Bussiness.html"target="_self">
+            <button class="menu__item" style="--bgColorItem: #f54888;" > <a href="Smart Bussiness.html"target="_self">
               <svg class="icon" viewBox="0 0 24 24">
                <path d="M3.8,6.6h16.4"/>
                <path d="M20.2,12.1H3.8"/>
@@ -33,7 +33,7 @@
             </button>
             <BR> Smart Business
          
-            <button class="menu__item" style="--bgColorItem: #f54888;">
+            <button class="menu__item" style="--bgColorItem: #4343f5;">
               <svg class="icon" viewBox="0 0 24 24"> <a href="Smart Technology.html"target="_self">
                <path  d="M6.7,4.8h10.7c0.3,0,0.6,0.2,0.7,0.5l2.8,7.3c0,0.1,0,0.2,0,0.3v5.6c0,0.4-0.4,0.8-0.8,0.8H3.8
                C3.4,19.3,3,19,3,18.5v-5.6c0-0.1,0-0.2,0.1-0.3L6,5.3C6.1,5,6.4,4.8,6.7,4.8z"/>
@@ -43,7 +43,7 @@
             </button>
             <BR> Smart Technology
          <BR> 
-            <button class="menu__item" style="--bgColorItem: #4343f5;" > <a href="Smart Connection.html"target="_self">
+            <button class="menu__item" style="--bgColorItem: #e0b115;" > <a href="Smart Connection.html"target="_self">
                <svg class="icon" viewBox="0 0 24 24">
                <path  d="M3.4,11.9l8.8,4.4l8.4-4.4"/>
                <path  d="M3.4,16.2l8.8,4.5l8.4-4.5"/>
@@ -53,7 +53,7 @@
                </button>
                <BR> Smart Connection
                   <BR> 
-            <button class="menu__item " style="--bgColorItem: #e0b115;" > <a href="Smart Me.html"target="_self">
+            <button class="menu__item " style="--bgColorItem:#65ddb7;" > <a href="Smart Me.html"target="_self">
               <svg class="icon" viewBox="0 0 24 24" >
                <path  d="M5.1,3.9h13.9c0.6,0,1.2,0.5,1.2,1.2v13.9c0,0.6-0.5,1.2-1.2,1.2H5.1c-0.6,0-1.2-0.5-1.2-1.2V5.1
                  C3.9,4.4,4.4,3.9,5.1,3.9z"/>
@@ -98,14 +98,57 @@
             <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
          </div>
-       <!-- Paragraaf -->
-       <P>Dit is de portofolio van de Minor- Smart industry.</P>
-       <p>Op deze website komt de ontwikkeling en resultaten tijdens de Minor aan bod. Deze resultaten worden per vak aangetoond.</P>
-       <P>Veel kijk plezier</P>
-       <BR>
-        <P> In onderstaande site is de CV pagina te zien. Deze is gemaakt op basis van de platform: Plantsome.</P>
-        <BR>
          <BR>
+            <div class="float-container2">
+            <div class="float-child-L2">
+               <P>Dit is de portofolio van de Minor- Smart industry.</P>
+                  <p>Op deze website komt de ontwikkeling en resultaten tijdens de Minor aan bod. Deze resultaten worden per vak aangetoond.</P>
+                  <P>Veel kijk plezier</P>
+                  <BR>
+                   <P> In onderstaande site is de CV pagina te zien. Deze is gemaakt op basis van de platform: Plantsome.</P>
+                                              
+            </div>
+            
+            <div class="float-child-R2">
+               <div id="weather">
+                  <div id="description"></div>
+                  <h1 id="temp"></h1>
+                  <div id="location"></div>
+              </div>
+               <script lang="text/javascript">
+              function weatherBalloon( cityID) {
+                  var key = 'f173f49df69abd6adeff14c0a8f576e9';
+            fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID+ '&appid=' + key)  
+            .then(function(resp) { return resp.json() }) // Convert data to json
+             .then(function(data) {
+                drawWeather(data); // Call drawWeather
+             })
+             .catch(function() {
+                // catch any errors
+             });
+          }
+          
+          
+          window.onload = function() {
+            weatherBalloon( 2750052  );
+          }
+          
+          function drawWeather( d ) {
+             var celcius = Math.round(parseFloat(d.main.temp)-273.15);
+             var fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
+             
+             document.getElementById('description').innerHTML = d.weather[0].description;
+             document.getElementById('temp').innerHTML = celcius + '&deg;';
+             document.getElementById('location').innerHTML = d.name;
+          }
+              // future javascript
+            </script>
+         </div>
+         </div>
+       <!-- Paragraaf -->
+       
+         <bR>
+         <BR><br><BR><br> <BR><br>
       <div class = "float-container">
          <P> Voor vragen kan je via onderstaande contact opnemen: </p>
          <div class="container-contact">
