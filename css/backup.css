@@ -146,8 +146,7 @@ padding: 0;}
     border: 2px solid black;
 }  
 
-
-.container2 {
+.float-container2 {
 	background: burlywood;
 	color: black;
     padding: 25px;
@@ -157,39 +156,42 @@ padding: 0;}
 	border: 1px solid black;
 	border-right-width: 6px;
 	border-left-width: 6px;
-	box-sizing: border-box;
-	display: grid;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: 1fr;
-	grid-column-gap: 0px;
-	grid-row-gap: 0px;
-
 }
 
-.Split{
-	float: left;
- 	 width: 70%; /* three boxes (use 25% for four, and 50% for two, etc) */
-  	padding: 50px; /* if you want space between the images */
-	  padding-left: 60px;
+.float-child-R2 {
+    width: 45%;
+    float: right;
+	background:lightgray;
+	color:black;
+	font-size: 20px;
+	text-align: center;
+    padding: 20px;
+    border: 2px solid black;
+}  
+
+.float-child-L2 {
+    width: 40.8%;
+    float: left;
 	color:darkslategray;
 	font-size: 25px;
 	font-weight: 800 ;
 	font-family: Arial, Helvetica, sans-serif;
-	text-align: center;
-    border: 5px solid white;
+	text-align: left;
+    padding: 35px;
+    border: 10px solid white;
+	border-bottom-width: 30px;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
 	font-size: 1.35em;
 	color: #fff;
 	text-shadow: .1em .1em 0 rgba(0,0,0,0.3);
-	height: 387px;
+	height: 64vh;
+	display: flex;
 	align-items: right;
 	justify-content: right;
 	background-image: linear-gradient(to right top, #99bbcb, #a5c7d7, #b1d4e2, #bde0ee, #c9edfa); 
-	 grid-area: 1 / 1 / 2 / 2; }
 
-	
+	}
 	h2 {
 		margin: 0 auto;
 		font-size: 2.2em;
@@ -207,52 +209,62 @@ padding: 0;}
 	background-image: linear-gradient(to right top, #637c7b, #718e8c, #7ea09e, #8db2b0, #9bc5c3);
 	}
 	
-	.splitFoto{
-		}
-	.SplitM {
-		float: left;
-		  width: 20%; /* three boxes (use 25% for four, and 50% for two, etc) */
- 		 padding: 50px; /* if you want space between the images */
- 		 z-index: 2;
-		
+	.close {
+			position: absolute;
+			width: 64vh;
+			height: 59vh;
+			opacity: 1;
+			text-align: center;
+		  }
+	.close:hover {
+			opacity: 1;
+		  }
+	.close:before, .close:after {
+			position: absolute;
+			content: ' ';
+			height: 64vh;
+			width: 7px;
+			background-color: white;
+		  }
+	.close:before {
 			
-	}
-	 .SplitR {
-		float: right;
-  	width: 100%; /* three boxes (use 25% for four, and 50% for two, etc) */
-  	padding-left: 100px; /* if you want space between the images */
-	padding-right: 50px;
-	Padding-top: 20px;
-	  z-index: 0;
-	  grid-area: 1 / 2 / 2 / 3;
+		  }
+	.close:after {
+			transform: rotate(-90deg);
+		  }
+  
+	.float-child-L3 {
+		width: 36.9%;
+		float: left;
+		padding: 35px;
+		border: 5px solid lightgrey;
+		border-bottom-width: 25px;
+		text-shadow: .1em .1em 0 rgba(0,0,0,0.3);
+		height: 64vh;
+		display: flex;
 		
-	 }
-	 .float-child-R2 {
-		width: 100%;
-		float: right;
-		background:white;
-		color: darkcyan;
-		font-size: 20px;
-		text-align: center;
-		align-content: left;
-		border: 20px black;
-		border-bottom-width: 3px;
-		border-bottom-color: lightsalmon;
-		outline: 5px black;
-	 } 
-	 .float-child-R2-1 {
-		width: 100%;
-		float: right;
-		background:white;
-		color: darkcyan;
-		font-size: 20px;
-		text-align: center;
-		align-content: left;
-		border: 8px gray;
-		border-top-width: 3px;
-		border-top-color: brown;
-		outline: 5px black;
-	}  
+		position: absolute;
+	}	
+	.float-child-L4 {
+		width: 36.9%;
+		float: left;
+		padding: 35px;
+		border: 2px solid darkgray;
+		border-bottom-width: 18px;
+		text-shadow: .1em .1em 0 rgba(0,0,0,0.3);
+		height: 64vh;
+		display: flex;
+			position: absolute;
+	}	
+
+	.float-child-L5 {
+		width: 52%;
+    float: right;
+	font-size: 20px;
+	text-align: right;
+    padding: 20px;
+	position: absolute;
+ 	}	
 
 	 .float-child-R3 {
 		width: 25%;
@@ -267,6 +279,9 @@ padding: 0;}
 		border: 4px solid darkgrey;
 		border-top-width:10px ;}
 		
+
+	
+
 
 	 .float-roof {
 		width:98%;
@@ -289,6 +304,7 @@ padding: 0;}
 		padding: 5px;
 		background-color: rgb(35, 35, 35);
 		background-position:center;
+		min-height 20px;
 		margin-bottom:30px;
 		text-align: center;
 		font-size: 5px;
@@ -312,13 +328,13 @@ padding: 0;}
 		border: 1px solid black;
 		border-right-width: 6px;
 		border-left-width: 6px;
-		z-index: 1;
-		}
+	}
 
 	.float-inside {width:95%;
 		padding: 5px;
 		background-color: rgb(35, 35, 35);
 		background-position:center;
+		min-height 20px;
 		margin-bottom:30px;
 		text-align: center;
 		font-size: 5px;
@@ -326,8 +342,7 @@ padding: 0;}
 		overflow:hidden;
 		border: 1px solid black;
 		border-right-width: 6px;
-		border-left-width: 6px;
-		z-index: 1;}
+		border-left-width: 6px;}
 
 	.float-ceiling {width:95%;
 		padding: 15px;
@@ -369,7 +384,6 @@ padding: 0;}
     bottom: 0;
     width: 90%;
     color: white;
-	z-index: 10;
         
 }
 
