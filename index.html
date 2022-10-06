@@ -11,7 +11,7 @@
    <body>
 
         <BR>
-                 <div class="float-container">
+                 <div class="float-roof">
 
             <div class="float-child-L">
                <BR>
@@ -30,7 +30,9 @@
             <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
          </div>
-                     <div class="float-container2">
+         <div class="float-inside"></div>
+         <div class="float-ceiling"></div>
+         <div class="float-container2">
           
             <div class="float-child-L2">
                <p> het weer buiten: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</p> <BR>
@@ -61,19 +63,16 @@
           function drawWeather( d ) {
 	var celcius = Math.round(parseFloat(d.main.temp)-273.15);
 	var fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
-   var description = d.weather[0].description;
+    var description = d.weather[0].description;
 	
 	document.getElementById('description').innerHTML = d.weather[0].description;
 	document.getElementById('temp').innerHTML = celcius + '&deg;';
 	document.getElementById('location').innerHTML = d.name;
-   document.getElementById('wind').innerHTML = d.wind.speed + ' m/s';
-    
+    document.getElementById('sunset').innerHTML = d.sys.sunset;
     if( description.indexOf('rain') > 0 ) {
   	document.body.className = 'rainy';
-
   } else if( description.indexOf('cloud') > 0 ) {
   	document.body.className = 'cloudy';
-
   } else if( description.indexOf('sunny') > 0 ) {
   	document.body.className = 'sunny';
   }
@@ -104,12 +103,16 @@
                 <P> Aan de linkerkant is er een raam waardoor er naar buiten kan worden gekeken. Hierin is het huidige weer van Nijmegen te zien. Informatie staat in het raam zelf</P>                           
          </div>
          </div>
-         <div class="float-container3"></div>
+         <div class="float-floor"></div>
+         <div class="float-inside"></div>
+         <div class="float-ceiling"></div>
        <!-- Paragraaf -->
-         <bR>
-         <BR><br><BR><br> <BR><br>
+
       <div class = "float-container">
-         <P> Voor vragen kan je via onderstaande contact opnemen: </p>
+         <BR>
+         <div class="float-child-R3">
+            <div class="container-contact"> <P> Voor vragen kan je via onderstaande contact opnemen: </p><BR><BR><BR></div>
+         <BR>
          <div class="container-contact">
                   <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xwkzlgpy" method="post">
                <fieldset id="fs-frm-inputs">
@@ -125,18 +128,15 @@
                  <BR>
                  <textarea rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
                  <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-               </fieldset>
-               <br>
-               <input type="submit" value="Submit">
-             </form>
+               </fieldset><BR>
+                 <input type="submit" value="Submit">
+             </form></div>
          </P>
       </div>
-   </div>      <BR>
-      <BR>
-      <BR>
-      <BR>
-      <BR>
-      <BR>         <header>
+   </div>    <div class="float-floor"></div>
+   <div class="float-inside"></div>
+      <div class="float-ground"> <BR> <BR><BR> <BR></div>
+              <header>
          <menu class="menu">
             <button class="menu__item active" style="--bgColorItem: #ff8c00;" >
                <svg class="icon" viewBox="0 0 24 24" > <a href="index.html" target="_self">
