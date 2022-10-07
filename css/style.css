@@ -366,10 +366,10 @@ padding: 0;}
     align-items: center;
     justify-content: center;
     bottom: 0;
-    width: 90%;
+    width: 100%;
     color: white;
+	background-color: var(--bgColorMenu);
 	z-index: 5;
-    background-color: black;
 }
 
 .menu__item{
