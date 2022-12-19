@@ -36,7 +36,7 @@ padding: 0;}
 	align-items: center;
 	align-content: center;}
 	
-	.container-menu{
+.container-menu{
 		margin: 0; 
 		height: auto; /*if more info comes on the page, it will stretch down*/ 
 		width: 350px; 
@@ -65,12 +65,13 @@ padding: 0;}
 	font-size: 20px;
 }
 
-#showcase h1{
-	color:#fff;
-	font-size:50px;
-	line-height: 1.6em;
-	padding-top:30px;
-}
+.img {
+	border:2px solid #fff;
+	box-shadow: 10px 10px 5px #ccc;
+	-moz-box-shadow: 10px 10px 5px #ccc;
+	-webkit-box-shadow: 10px 10px 5px #ccc;
+	-khtml-box-shadow: 10px 10px 5px #ccc;
+  }
 
 #main{
 	float:left;
@@ -133,6 +134,29 @@ padding: 0;}
     border: 2px solid black;
 }  
 
+
+.float-roof2-L {
+	width: 60%;
+    float: left;
+	background-color: lightgray;
+	color:black;
+	font-size: 20px;
+	text-align: center;
+    border: 2px solid black;
+	border-right-width: px;
+}  
+
+.float-roof3-R {
+	width: 60%;
+    float: Right;
+	background-image:url('../images/wood.jpg');
+	color:floralwhite;
+	font-size: 20px;
+	text-align: center;
+    border: 2px solid black;
+	border-left-width: 6px;
+}  
+
 .float-child-R {
     width: 65%;
     float: right;
@@ -148,7 +172,6 @@ padding: 0;}
 
 
 .container2 {
-	background: burlywood;
 	color: black;
     padding: 25px;
 	width:95%;
@@ -159,6 +182,23 @@ padding: 0;}
 	border-left-width: 6px;
 	box-sizing: border-box;
 	display: grid;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+
+}
+.container3 {
+	color: black;
+    padding: 25px;
+	width:95%;
+	margin:auto;
+	overflow:hidden;
+	border: 1px solid black;
+	border-right-width: 6px;
+	border-left-width: 6px;
+	box-sizing: border-box;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 1fr;
@@ -226,8 +266,8 @@ padding: 0;}
 	  z-index: 0;
 	  grid-area: 1 / 2 / 2 / 3;
 		
-	 }
-	 .float-child-R2 {
+ }
+.float-child-R2 {
 		width: 100%;
 		float: right;
 		background:white;
@@ -238,23 +278,43 @@ padding: 0;}
 		border: 20px black;
 		border-bottom-width: 3px;
 		border-bottom-color: lightsalmon;
-		outline: 5px black;
+		
 	 } 
-	 .float-child-R2-1 {
+	 
+.float-child-R2-1 {
 		width: 100%;
 		float: right;
-		background:white;
-		color: darkcyan;
+		background:lightgray;
+		color: black;
 		font-size: 20px;
 		text-align: center;
 		align-content: left;
 		border: 8px gray;
 		border-top-width: 3px;
 		border-top-color: brown;
-		outline: 5px black;
-	}  
-
-	 .float-child-R3 {
+		}  
+.float-child-R2-2 {
+			width: 16%;
+			float: center;
+			color: black;
+			font-size: 18px;
+			text-align: center;
+			align-content: left;
+						border-top-width: 3px;
+			border-top-color: brown;
+			padding: 0%;
+			}
+.float-child-R2-3	{ width: 80%;
+			float: right;
+			background:gray;
+			color: black;
+			font-size: 20px;
+			text-align: center;
+			align-content: left;
+			border: 8px gray;
+			border-top-width: 3px;
+			border-top-color: brown;}
+ .float-child-R3 {
 		width: 25%;
 		float: right;
 		background:lightgrey;
@@ -264,11 +324,126 @@ padding: 0;}
 		font-family: Arial, Helvetica, sans-serif;
 		text-align: center;
 		padding: 35px;
-		border: 4px solid darkgrey;
-		border-top-width:10px ;}
+		}
 		
+.float-child-R4-3	{ width: 20%;
+			float: right;
+			background:lightgray;
+			color: black;
+			font-size: 20px;
+			text-align: center;
+			align-content: left;
+			border: 8px gray;
+			border-top-width: 3px;
+			border-top-color: brown;}
 
-	 .float-roof {
+
+
+.float-child-Right	{ width: 45%;
+	float: right;
+	color: black;
+	font-size: 20px;
+	text-align: center;
+	align-content: right}
+
+.float-child-Left	{ width: 45%;
+		float: left;
+		color: black;
+		padding: 20px;
+		font-size: 20px;
+		text-align: center;
+		align-content: left;}
+
+.float-child-Center	{ 
+	float: center;
+	color: black;
+	font-size: 20px;
+	text-align: center;
+	align-content: center;padding: 20px;}
+
+.float-picture {position: relative;
+	margin: auto;}
+	/* Hide the images by default */
+.mySlides {
+	display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+	background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+  }
+
+/* Dit is alles voor de opmaak van het huis */
+.float-roof {
 		width:98%;
 		padding: 25px;
 		background-image:url('../images/roof2.jpg');
@@ -285,7 +460,40 @@ padding: 0;}
 		border-top-width: 4px;
 		
 	}
-	.float-inside-roof {width:98%;
+.float-roof2 {
+		width:98%;
+		background-image:url('../images/Roof3.jpg');
+		background-position:center;
+		min-height:50px;
+		margin-bottom:30px;
+		text-align: center;
+		font-size: 20px;
+		margin:auto;
+		overflow:hidden;
+		border: 1px solid black;
+		border-right-width: 6px;
+		border-left-width: 6px;
+		border-top-width: 4px;
+		
+	}
+.float-roof3 {
+		width:98%;
+		background-image:url('../images/roof4.jfif');
+		background-position:center;
+		min-height:50px;
+		margin-bottom:30px;
+		text-align: center;
+		font-size: 20px;
+		margin:auto;
+		overflow:hidden;
+		border: 1px solid black;
+		border-right-width: 6px;
+		border-left-width: 6px;
+		border-top-width: 4px;
+		
+	}
+
+.float-inside-roof {width:98%;
 		padding: 5px;
 		background-color: rgb(35, 35, 35);
 		background-position:center;
@@ -298,7 +506,7 @@ padding: 0;}
 		border-right-width: 6px;
 		border-left-width: 6px;}
 
-	 .float-floor {
+.float-floor {
 		width:95%;
 		padding: 25px;
 		background-image:url('../images/Floor.jfif');
@@ -315,7 +523,52 @@ padding: 0;}
 		z-index: 1;
 		}
 
-	.float-inside {width:95%;
+.float-floor2 {
+			width:95%;
+			padding: 25px;
+			background-image:url('../images/Floor2.jpg');
+			background-position:center;
+			min-height:50px;
+			margin-bottom:30px;
+			text-align: center;
+			font-size: 20px;
+			margin:auto;
+			overflow:hidden;
+			border: 1px solid black;
+			border-right-width: 6px;
+			border-left-width: 6px;
+			z-index: 1;
+			}
+
+.float-floor2-1{ width:100%;
+		padding: 20px;
+		background-image:url('../images/Floor.jfif');
+		background-position:center;
+		min-height:50px;
+		margin-bottom:30px;
+		text-align: center;
+		font-size: 20px;
+		margin:auto;
+		border: 0px solid black;
+		border-top-width: 1px;
+		overflow:hidden;
+		z-index: 1;}
+
+		.float-floor3-1{ width:100%;
+		padding: 20px;
+		background-image:url('../images/Floor2.jpg');
+		background-position:center;
+		min-height:50px;
+		margin-bottom:30px;
+		text-align: center;
+		font-size: 20px;
+		margin:auto;
+		border: 0px solid black;
+		border-top-width: 1px;
+		overflow:hidden;
+		z-index: 1;}	
+	
+.float-inside {width:95%;
 		padding: 5px;
 		background-color: rgb(35, 35, 35);
 		background-position:center;
@@ -329,7 +582,7 @@ padding: 0;}
 		border-left-width: 6px;
 		z-index: 1;}
 
-	.float-ceiling {width:95%;
+.float-ceiling {width:95%;
 		padding: 15px;
 		background-image:url('../images/Ceiling.jfif');
 		background-position:center;
@@ -343,7 +596,7 @@ padding: 0;}
 		border-right-width: 6px;
 		border-left-width: 6px;}
 
-	.float-ground {
+.float-ground {
 			padding: 25px;
 			background-image:url('../images/Ground.jpg');
 			background-position:center;
@@ -356,7 +609,7 @@ padding: 0;}
 			border-top-color: darkgreen;
 		}
 		
-
+/* Dit is alles voor de opmaak en werking van het menu */
 .menu{
     display: flex;
     width: 32.05em;
