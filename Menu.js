@@ -18,10 +18,7 @@ function clickItem(item, index) {
     }
 
     
-    item.classList.add("active");
-    body.style.backgroundColor = bgColorsBody[index];
-    activeItem = item;
-    offsetMenuBorder(activeItem, menuBorder);
+
     
     
 }
