@@ -10,7 +10,7 @@
 <body>
 	<div class="container-body" style="position: relative; ">
 		  <BR><BR>
-					 <div class="float-roof-riet">
+					<div class="float-roof-riet">
 						<img src="images/Chimney.png" width="100" height="130"  style="position:  absolute; top: -5px ; left: 1150px ; z-index: 2;">
 		
 	<BR><BR><BR><BR><BR>
@@ -53,14 +53,87 @@ position:  absolute; top: 227px ; left: 790px ; z-index: 2;
 		<div class="vl" style="top: 440px; z-index: 0;"></div>
          <div class="float-ceiling"></div>
 		 <div class="container2" style="background-color: lightslategray">  
-			<div class="float-child-left"style="padding-right: 5px"> <B>6-9 Hello World CV </B><BR>Als eerste opdracht hebben wij een bestaande webpagina om moeten bouwen tot CV. Ik heb hiervoor gekozen voor een favoriete site van mij: Plantsome. Ik heb hierbij de verkoop pagina van een plant omgebouwd tot een werkende pagina. <BR><BR> Het maken van de pagina duurde alleen langer dna verwacht door de lange tijd die de pagina had voordat die opnieuw was geladen.  </div>
+			<div class="float-child-left"style="padding-right: 5px; position: relative;z-index: 0;"> <B>6-9 Hello World CV </B><BR>Als eerste opdracht hebben wij een bestaande webpagina om moeten bouwen tot CV. Ik heb hiervoor gekozen voor een favoriete site van mij: Plantsome. 
+				Ik heb hierbij de verkoop pagina van een plant omgebouwd tot een werkende pagina. <BR><BR> Het maken van de pagina duurde alleen langer dna verwacht door de lange tijd die de pagina had voordat die opnieuw was geladen. Ik heb ook geprobeerd deze site te uploaden op github alleen was dit niet gelukt. 
+				<img  src="images/Plantsome.jpg" width="500" height="400"style="position: absolute; top: 230px; left: 30px;  z-index: 1;">
+				<img src="images/Window.png" width="535" height="435" style="position: absolute; top: 215px; left: 15px;  z-index: 0;">
+			</div>
 			<div class="float-child-right" style="padding-left: 5px"><B>Opzetten HTML pagina</B> <BR> Vanaf deze les zijn we begonnen met het opbouwen van het portofolio. Eerst had ik een standaard paganina gemaakt zonder te veel poespas. Bij de pagina heb ik ook gebruik gemaakt van javascript. 
 				Ik heb hierbij codepen gebruikt om de menubalk toe te voegen. Hierbij kwam ik er al snel achter dat het kopieëren van Javascript niet ging zoals verwacht. 
 				Het verwijzen naar verschillende javascripts ging vaak niet.  <BR><BR>
-				De huidige menubalk heb ik van codepen afgehaald omdat deze mij best interresant leek. Deze bleef alleen niet onderin de pagina hangen op de juiste manier. Hierdoor heb ik deze in een aparte container gezet. <BR> <BR> Tijdens deze les hebben wij ook geleerd hoe API's kunnen worden gebruikt. Deze heb ik vanuit de site variant om proberen te zetten tot een raam op de begin pagina. Normaal gesproken is het de bedoeling dat de achtergrond verandert van de hele pagina op basis van het huidige weer. Dit wou ik niet bij mijn achtegrond dus moest alleen de container veranderen. Helaas bleek dit niet mogelijk is en blijft het bewolkt in "nijmegen" </div>
+				De huidige menubalk heb ik van codepen afgehaald omdat deze mij best interresant leek. Deze bleef alleen niet onderin de pagina hangen op de juiste manier. Hierdoor heb ik na vaak proberen deze uiteindelijk in een aparte "container" gezet. <BR> <BR> Tijdens deze les hebben wij ook geleerd hoe API's kunnen worden gebruikt. Deze heb ik vanuit de site variant om proberen te zetten tot een raam op de begin pagina. Normaal gesproken is het de bedoeling dat de achtergrond verandert van de hele pagina op basis van het huidige weer. Dit wou ik niet bij mijn achtegrond dus moest alleen de container veranderen. Helaas bleek dit niet mogelijk is en blijft de achtergrond de kleuren van "bewolkt zien"</div>
 			<BR> <BR><BR> <BR>  <BR> <BR><BR> <BR> </div>
 	   <div class="float-floor"></div>
 	   <div class="float-inside"></div>
+	   <div class="float-ceiling"></div>
+<div class="container2" style="background-color: beige"> <div class="float-child-left"style="padding-right: 5px; position: relative;z-index: 0;">
+	<div>Teachable Machine Image Model</div>
+<button type="button" onclick="init()">Start</button>
+<div id="webcam-container"></div>
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+<script type="text/javascript">
+    // More API functions here:
+    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+    // the link to your model provided by Teachable Machine export panel
+    const URL = "https://teachablemachine.withgoogle.com/models/Y4UPQMTvM/";
+
+    let model, webcam, labelContainer, maxPredictions;
+
+    // Load the image model and setup the webcam
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // load the model and metadata
+        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+        // or files from your local hard drive
+        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        // Convenience function to setup a webcam
+        const flip = true; // whether to flip the webcam
+        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        // append elements to the DOM
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) { // and class labels
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    }
+
+    async function loop() {
+        webcam.update(); // update the webcam frame
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
+
+    // run the webcam image through the image model
+    async function predict() {
+        // predict can take in an image, video or canvas html element
+        const prediction = await model.predict(webcam.canvas);
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        }
+    }
+</script>
+</div>
+<div class="float-child-right" style="padding-left: 5px"> Machine Learning. <BR><BR> De afgelopen weken heb ik veel geleerd over machine learning en de mogelijkheden hiervan. Bij machine learning ontstaat er een algoritme die leert op basis van de data. Deze data kan blijkbaar ook worden beinvloerd door bias als de aangeleverde data grootendeels uit specifieke dingen bestaat. Zoals het aanleveren van foto's waar grootendeels witte mensen op staan waardoor het systeem iemand met een andere huidskleur niet herkend. <BR>
+<BR> In het kader hiernaast heb ik via google machine learning een algoritme ontwikkeld die het verschil moet kunnen herkennen tussen alleen de plant, de pot of de plant met pot. Druk op de start knop en er zal gevraagd worden om de webcam te gebruiken. Zet een plant voor het scherm en zie wat het systeem herkend. <br>
+<BR> Herlaad de pagina als je de webcam uit wilt zetten :)</div>
+	</div> 
+	<div class="float-floor2"></div>
+	<div class="float-inside"></div>  </div>
+</div>
 	</div>
 	<div class="float-ground"> <BR> <BR><BR> <BR></div>
 			<header>
