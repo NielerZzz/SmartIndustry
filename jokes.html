@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>jokes</title>
+  </head>
+  <body>
+    <h1>
+Random grappen
+    </h1>
+    <div id="grap"></div>
+    <div id="antwoord"></div>
+
+      
+    <script lang="text/javascript">
+        fetch('https://official-joke-api.appspot.com/random_joke')  
+          .then(function(resp) { return resp.json() }) // Convert data to json
+          .then(function(data) {
+          console.log(data);   
+           console.log(data.setup);
+    console.log(data.punchline);
+    document.getElementById("grap").innerHTML = (data.setup);
+document.getElementById("antwoord").innerHTML = (data.punchline);
+
+          })
+          .catch(function() {  // catch any errors
+          });
+      </script>
+
+  </body>
+</html>
