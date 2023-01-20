@@ -392,7 +392,7 @@ padding: 0;}
 
 	/* Hide the images by default */
 * {box-sizing: border-box}
-.mySlides1, .mySlides2 {display: none}
+.mySlides1, .mySlides2, .mySlides3{display: none}
 img {vertical-align: middle;}
   
   /* Next & previous buttons */
@@ -593,7 +593,7 @@ img {vertical-align: middle;}
 		}
 	.vl {
 		border-left: 2px solid black;
-		height: 800px;
+		height: 850px;
 		position: absolute;
 		left: 50%;
 		margin-left: -3px;
